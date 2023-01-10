@@ -1,0 +1,105 @@
+{
+    "schedules": [
+        {
+            "id": "Int: 予約番号",
+            "from": "String (format: YYYY-MM-DD HH:II:SS) 開始日時",
+            "to": "String (format: YYYY-MM-DD HH:II:SS) 終了日時",
+            "category": "Int: カテゴリ番号",
+            "type": "予約分類",
+            "status": "Int: 状態番号",
+            "customer": {
+                "id": "Int: 顧客ID",
+                "side": "Int: 新郎 or 新婦の番号",
+                "type": "Int: 種別",
+                "first_name": "String: 名",
+                "last_name": "String: 姓",
+                "zipcode": "String (format: XXX-XXXX): 郵便番号",
+                "address": "String: 住所",
+                "tel": "String: 電話番号",
+                "email": "String: Eメール",
+                "remarks": "String: 備考",
+                "relations": [
+                    {
+                        "customers_id": "Int: 顧客ID",
+                        "side": "Int: 新郎 or 新婦の番号",
+                        "relationship": "String: 続柄",
+                        "first_name": "String: 名",
+                        "last_name": "String: 姓",
+                        "zipcode": "String (format: XXX-XXXX): 郵便番号",
+                        "address": "String: 住所",
+                        "tel": "String: 電話番号",
+                        "email": "String: Eメール"
+                    }
+                ]
+            },
+            "store": {
+                "id": "Int: 依頼先店舗ID",
+                "name": "String: 依頼先店舗名",
+                "zipcode": "String (format: XXX-XXXX): 郵便番号",
+                "address": "String: 住所",
+                "tel": "String: 電話番号",
+                "classifies": [
+                    {
+                        "id": "分類ID",
+                        "name": "分類名",
+                        "products": [
+                            {
+                                "id": "Int: 商品ID",
+                                "name": "String: 名前",
+                                "price": "Int: 価格"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "items": [
+                {
+                    "id": "Int: 商品ID",
+                    "branch": "Int: 枝番",
+                    "name": "String: 商品名",
+                    "status": "商品の状態番号",
+                    "category": {
+                        "id": "Int: カテゴリID",
+                        "name": "String: カテゴリ名"
+                    },
+                    "classifies": [
+                        {
+                            "id": "Int: 分類のID",
+                            "value": "String: 分類の値",
+                            "features": [
+                                {
+                                    "id": "Int: 特徴のID",
+                                    "key": "String: 特徴のキー",
+                                    "value": "String: 特徴の値"
+                                }
+                            ]
+                        }
+                    ],
+                    "size": {
+                        "id": "Int: サイズのID",
+                        "value": "String: サイズ名"
+                    },
+                    "belong": {
+                        "partners_id": "Int: 店舗のID",
+                        "name": "String: 店舗名"
+                    },
+                    "location": {
+                        "partners_id": "Int: 店舗のID",
+                        "name": "String: 店舗名",
+                        "place": {
+                            "place_id": "Int: 保管場所ID",
+                            "name": "String: 保管場所名"
+                        }
+                    },
+                    "store_products": [
+                        {
+                            "id": "Int: 依頼先店舗の商品ID",
+                            "name": "String: 名前",
+                            "price": "Int: 価格"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,7 @@
+name: demo # 作成したパッケージ名
+
+environment:
+    sdk: ">=2.16.2 <3.0.0"
+
+dependencies:
+    email_validator: ^2.0.1
